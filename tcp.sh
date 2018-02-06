@@ -11,7 +11,7 @@ export PATH
 #=================================================
 
 sh_ver="1.0.6"
-github="raw.githubusercontent.com/chiakge/Linux-NetSpeed/master"
+github="raw.githubusercontent.com/isharework/Linux-NetSpeed/master"
 
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
 Info="${Green_font_prefix}[信息]${Font_color_suffix}"
@@ -138,7 +138,7 @@ startbbrmod(){
 #启用Lotserver
 startlotserver(){
 	remove_all
-	wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh && chmod +x appex.sh && bash appex.sh install
+	wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/isharework/serverSpeeder_Install/master/appex.sh && chmod +x appex.sh && bash appex.sh install
 	rm -f appex.sh
 	memory=`cat /proc/meminfo |grep 'MemTotal' |awk -F : '{print $2}' |sed 's/^[ \t]*//g' | awk  '{print $1}'`
 	memory1=`expr ${memory} / 1024`
@@ -169,7 +169,7 @@ remove_all(){
 	sed -i '/net.core.default_qdisc/d' /etc/sysctl.conf
     sed -i '/net.ipv4.tcp_congestion_control/d' /etc/sysctl.conf
 	if [[ -e /appex/bin/serverSpeeder.sh ]]; then
-		wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/0oVicero0/serverSpeeder_Install/master/appex.sh && chmod +x appex.sh && bash appex.sh uninstall
+		wget --no-check-certificate -O appex.sh https://raw.githubusercontent.com/isharework/serverSpeeder_Install/master/appex.sh && chmod +x appex.sh && bash appex.sh uninstall
 		rm -f appex.sh
 	fi
 	clear
